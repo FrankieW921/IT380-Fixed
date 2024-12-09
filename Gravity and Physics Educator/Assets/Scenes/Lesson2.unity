@@ -496,8 +496,8 @@ MonoBehaviour:
     the following example, play around with the mass of an object exerting its gravitational
     force that retains the radius of the planet Earth. \nFor reference, Earth is
     around 5.972 x 10^24 kg. The value you input will be calculated as if it were
-    being multipled by 10^22, so to achieve a gravity similar to Earth's, input a
-    value like 600."
+    being multipled by 10^22 (adding 22 zeroes after the number you put in), so to
+    achieve a gravity similar to Earth's, input a value close to 600."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

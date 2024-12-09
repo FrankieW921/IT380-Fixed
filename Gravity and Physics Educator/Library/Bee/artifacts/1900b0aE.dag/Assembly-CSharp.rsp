@@ -348,6 +348,7 @@
 "Assets/Scripts/HeightInputScr.cs"
 "Assets/Scripts/Lesson1Script.cs"
 "Assets/Scripts/Lesson2Script.cs"
+"Assets/Scripts/Lesson3Script.cs"
 "Assets/Scripts/MassInputScr.cs"
 "Assets/Scripts/ObstacleScript.cs"
 "Assets/Scripts/RadiusInputScr.cs"
