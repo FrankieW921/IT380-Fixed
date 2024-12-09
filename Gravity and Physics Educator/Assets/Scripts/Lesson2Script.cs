@@ -14,6 +14,8 @@ public class Lesson2Script : MonoBehaviour
     TheBall ballScript;
     public GameObject target;
     TargetScript targetScript;
+    public GameObject obstacle1;
+    ObstacleScript obstacleScript1;
     public TMP_Text text1;
     public TMP_Text text2;
     public TMP_Text text3;
@@ -21,10 +23,12 @@ public class Lesson2Script : MonoBehaviour
     public TMP_Text text5;
     public TMP_Text text6;
     public TMP_Text text7;
+    public TMP_Text text8;
     public TMP_InputField gInput;
     public TMP_InputField massInput;
     public TMP_Text gravityEq;
     public Button nextButton;
+    public Button stopButton;
     public Camera firstCamera;
     public Camera ballCamera;
     public Camera targetCamera;
@@ -33,6 +37,7 @@ public class Lesson2Script : MonoBehaviour
     {
         ballScript = ball.GetComponent<TheBall>();
         targetScript = target.GetComponent<TargetScript>();
+        obstacleScript1 = obstacle1.GetComponent<ObstacleScript>();
     }
 
     // Update is called once per frame
@@ -112,12 +117,36 @@ public class Lesson2Script : MonoBehaviour
                 targetScript.setTravelSpeed(5f);
                 nextButton.gameObject.SetActive(false);
                 break;    
-            case 10:
+            case 10: //interlude
+                firstCamera.gameObject.SetActive(true);
                 textIndex++;
                 ballDemo.SetActive(false);
                 text7.gameObject.SetActive(true);
                 break;   
-            case 11:
+            case 11: //level 4
+                textIndex++;
+                text7.gameObject.SetActive(false);
+                ballDemo.SetActive(true);
+                ballScript.updateResetHeight(10f);
+                ballScript.updateHeight();
+                stopButton.gameObject.SetActive(true);
+                obstacle1.gameObject.SetActive(true);
+                targetScript.setTravelSpeed(2f);
+                obstacleScript1.setTravelSpeed(.5f);
+                break;   
+            case 12: //level 5
+                textIndex++;
+                ballScript.updateResetHeight(15f);
+                ballScript.updateHeight();
+                targetScript.setTravelSpeed(.5f);
+                obstacleScript1.setTravelSpeed(1.5f);
+                break;   
+            case 13:
+                ballDemo.SetActive(false);
+                firstCamera.gameObject.SetActive(true);
+                text8.gameObject.SetActive(true);
+                break;
+            case 14:
                 SceneManager.LoadScene(0);
                 break;    
         } 

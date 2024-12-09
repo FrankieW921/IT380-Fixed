@@ -48,12 +48,13 @@ public class TheBall : MonoBehaviour
             Time.timeScale = 0;
             lessonNextButton.gameObject.SetActive(true);
         }
-        /*else if (other.gameObject.CompareTag("Ground"))
+        else if (other.gameObject.CompareTag("Ground"))
         {
+            groundTouched = true;
             targetHitText.text = "Ground touched";
             targetHitText.gameObject.SetActive(true);
             Time.timeScale = 0;
-        } */
+        } 
     }
 
     //enable and disable the ball's gravity
@@ -81,6 +82,11 @@ public class TheBall : MonoBehaviour
         Time.timeScale = 1;
         groundTouched = false;
         targetHitText.gameObject.SetActive(false);
+    }
+
+    public void stopFalling(){
+        disableGravity();
+        rb.velocity = UnityEngine.Vector3.zero;
     }
 
     //changes the Unity force of gravity determined by Mass and Radius inputs

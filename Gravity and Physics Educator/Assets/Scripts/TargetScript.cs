@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TargetScript : MonoBehaviour
 {
-    private Vector3 pos1 = new Vector3(-5f, .75f, 0f);
-    private Vector3 pos2 = new Vector3(5f, .75f, 0f);
+    private Vector3 pos1 = new Vector3(-10f, .75f, 0f);
+    private Vector3 pos2 = new Vector3(10f, .75f, 0f);
     private float lerpTime = 0f;
     private int travelDirection = 0; //0 is moving to the right of the frame, 1 is moving to the left of the frame
     // Start is called before the first frame update

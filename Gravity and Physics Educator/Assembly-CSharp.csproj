@@ -59,7 +59,7 @@
     <UnityVersion>2021.3.45f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\chief\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.4\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\Frankie\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.0.5\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\TargetSpeedInputScr.cs" />
@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\TheBall1.cs" />
     <Compile Include="Assets\Scripts\RadiusInputScr.cs" />
     <Compile Include="Assets\Scripts\TitleScreenScript.cs" />
+    <Compile Include="Assets\Scripts\ObstacleScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
