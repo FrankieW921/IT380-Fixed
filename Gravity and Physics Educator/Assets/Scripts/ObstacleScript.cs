@@ -12,30 +12,35 @@ public class ObstacleScript : MonoBehaviour
     private float travelSpeed = 1f;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(travelDirection == 0){
+        if (travelDirection == 0)
+        {
             transform.position = Vector3.Lerp(pos1, pos2, lerpTime);
             lerpTime += Time.deltaTime * travelSpeed;
         }
-        else if(travelDirection == 1){
+        else if (travelDirection == 1)
+        {
             transform.position = Vector3.Lerp(pos1, pos2, lerpTime);
             lerpTime -= Time.deltaTime * travelSpeed;
         }
 
-        if(lerpTime <= 0f){
+        if (lerpTime <= 0f)
+        {
             travelDirection = 0;
         }
-        else if(lerpTime >=1f){
+        else if (lerpTime >= 1f)
+        {
             travelDirection = 1;
         }
     }
 
-    public void setTravelSpeed(float speed){
+    public void setTravelSpeed(float speed)
+    {
         travelSpeed = speed;
     }
 }

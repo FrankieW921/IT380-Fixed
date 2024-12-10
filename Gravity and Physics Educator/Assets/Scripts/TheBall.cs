@@ -54,7 +54,7 @@ public class TheBall : MonoBehaviour
             targetHitText.text = "Ground touched";
             targetHitText.gameObject.SetActive(true);
             Time.timeScale = 0;
-        } 
+        }
     }
 
     //enable and disable the ball's gravity
@@ -84,7 +84,8 @@ public class TheBall : MonoBehaviour
         targetHitText.gameObject.SetActive(false);
     }
 
-    public void stopFalling(){
+    public void stopFalling()
+    {
         disableGravity();
         rb.velocity = UnityEngine.Vector3.zero;
     }

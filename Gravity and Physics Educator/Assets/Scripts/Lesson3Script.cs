@@ -15,7 +15,9 @@ public class Lesson3Script : MonoBehaviour
     public GameObject target;
     TargetScript targetScript;
     public GameObject obstacle1;
+    public GameObject obstacle2;
     ObstacleScript obstacleScript1;
+    ObstacleScript2 obstacleScript2;
     public TMP_Text text1;
     public TMP_Text text2;
     public TMP_Text text3;
@@ -39,16 +41,19 @@ public class Lesson3Script : MonoBehaviour
         ballScript = ball.GetComponent<TheBall>();
         targetScript = target.GetComponent<TargetScript>();
         obstacleScript1 = obstacle1.GetComponent<ObstacleScript>();
+        obstacleScript2 = obstacle2.GetComponent<ObstacleScript2>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void clickNext(){
-        switch(textIndex){
+    public void clickNext()
+    {
+        switch (textIndex)
+        {
             case 0:
                 textIndex++;
                 text1.gameObject.SetActive(false);
@@ -60,11 +65,12 @@ public class Lesson3Script : MonoBehaviour
                 ballDemo.gameObject.SetActive(true);
                 radiusInput.gameObject.SetActive(true); //initial radius example
                 ballScript.updateMass(597);
+                ballScript.updateRadius(1000000);
                 ballScript.updateHeight();
                 break;
-            case 2: 
+            case 2:
                 textIndex++;
-                ballDemo.gameObject.SetActive(false); 
+                ballDemo.gameObject.SetActive(false);
                 text3.gameObject.SetActive(true);
                 break;
             case 3:
@@ -79,6 +85,7 @@ public class Lesson3Script : MonoBehaviour
                 targetCamera.gameObject.SetActive(true);
                 firstCamera.gameObject.SetActive(false);
                 ballDemo.SetActive(true);
+                ballScript.updateHeight();
                 target.SetActive(true);
                 targetScript.setTravelSpeed(2f);
                 nextButton.gameObject.SetActive(false);
@@ -86,48 +93,62 @@ public class Lesson3Script : MonoBehaviour
                 break;
             case 5: //level 2
                 textIndex++;
-                ballScript.updateResetHeight(20f);
+                ballScript.updateResetHeight(15f);
                 ballScript.updateHeight();
                 targetScript.setTravelSpeed(.3f);
                 nextButton.gameObject.SetActive(false);
                 obstacle1.gameObject.SetActive(true);
                 obstacleScript1.setTravelSpeed(.5f);
-                break;  
+                break;
             case 6:
                 textIndex++;
-
-                break;      
-            case 7: //level 1
-                textIndex++;
-
+                ballDemo.SetActive(false);
+                firstCamera.gameObject.SetActive(true);
+                text5.gameObject.SetActive(true);
                 break;
-            case 8: //level 2
+            case 7: //level 3
                 textIndex++;
-
-                break; 
-            case 9: //level 3
-                textIndex++;
-
-                break;    
-            case 10: //interlude
-                textIndex++;
-                break;   
-            case 11: //level 4
-                textIndex++;
-
-
-                break;   
-            case 12: //level 5
-                textIndex++;
-                
-                break;   
-            case 13:
-                textIndex++;
+                text5.gameObject.SetActive(false);
+                ballDemo.SetActive(true);
+                ballScript.updateResetHeight(15f);
+                ballScript.updateHeight();
+                ballScript.updateRadius(1000000);
+                ballScript.updateMass(597);
+                firstCamera.gameObject.SetActive(false);
+                massInput.gameObject.SetActive(true);
+                targetScript.setTravelSpeed(1f);
+                obstacleScript1.setTravelSpeed(.5f);
+                nextButton.gameObject.SetActive(false);
                 break;
-            case 14:
+            case 8: //level 4
+                textIndex++;
+                ballScript.updateResetHeight(20f);
+                ballScript.updateHeight();
+                nextButton.gameObject.SetActive(false);
+                obstacle2.gameObject.SetActive(true);
+                obstacleScript2.setTravelSpeed(.5f);
+                obstacleScript1.setTravelSpeed(1.3f);
+                targetScript.setTravelSpeed(1.5f);
+                break;
+            case 9: //level 5
+                textIndex++;
+                ballScript.updateResetHeight(20f);
+                ballScript.updateHeight();
+                nextButton.gameObject.SetActive(false);
+                obstacleScript2.setTravelSpeed(1.1f);
+                obstacleScript1.setTravelSpeed(.55f);
+                targetScript.setTravelSpeed(1f);
+                break;
+            case 10: //final congrats
+                textIndex++;
+                firstCamera.gameObject.SetActive(false);
+                ballDemo.gameObject.SetActive(false);
+                text6.gameObject.SetActive(false);
+                break;
+            case 11:
                 SceneManager.LoadScene(0);
-                break;    
-        } 
+                break;
+        }
         Time.timeScale = 1;
     }
 }
